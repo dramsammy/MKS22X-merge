@@ -11,5 +11,17 @@ public class Merge{
 
     mergeSort()
   }
-  public static void split()
+  public static void split(int[] data){
+    int length = 0;
+    int count = 0;
+    length = data.length / 2;
+    temp1 = new int[length];
+    for (int i = 0; i < length; i++){
+      temp1[i] = data[i];
+    }
+    for (int a = length; a < data.length; a++){
+      temp2[count] = data[a];
+      count++;
+    }
+  }
 }
