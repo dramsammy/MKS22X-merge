@@ -8,8 +8,8 @@ public class Merge{
     if (lo >= hi){
       return;
     }
+    if (data.length == 1)
 
-    mergeSort()
   }
   public static void split(int[] data){
     int length = 0;
@@ -23,5 +23,8 @@ public class Merge{
       temp2[count] = data[a];
       count++;
     }
+  }
+  public static void merge(int[] data, int[] data1){
+
   }
 }
