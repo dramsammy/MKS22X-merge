@@ -3,14 +3,19 @@ public class Merge{
   public static int[] temp2;
   public static int[] merge;
   public static void mergeSort(int[] data){
-    return mergeSort(data, 1, data.length);
+    mergeSort(data, 1, data.length);
+    return;
   }
   public static void mergeSort(int[] data, int lo, int hi){
     if (lo >= hi){
       return;
     }
-    if (data.length == 1)
-
+    if (data.length == 1){
+      return;
+    }
+    if (data.length > 1){
+      
+    }
   }
   public static void split(int[] data){
     int length = 0;
@@ -39,7 +44,7 @@ public class Merge{
     }
     return;
     if (data.length > 1 && data1.length > 1){
-      return
+      return;
     }
   }
 }
