@@ -1,6 +1,7 @@
 public class Merge{
   public static int[] temp1;
   public static int[] temp2;
+  public static int[] merge;
   public static void mergeSort(int[] data){
     return mergeSort(data, 1, data.length);
   }
@@ -24,7 +25,16 @@ public class Merge{
       count++;
     }
   }
-  public static void merge(int[] data, int[] data1){
-
+  public static int[] merge(int[] data, int[] data1){
+    merge = new int[data.length + data1.length];
+    if (data.length == 1 && data1.length == 1){
+      if (data[0] >= data1[0]){
+        merge[0] = data1[0];
+        merge[1] = data[0];
+      }
+      else{
+        
+      }
+    }
   }
 }
