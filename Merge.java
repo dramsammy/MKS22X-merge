@@ -25,7 +25,7 @@ public class Merge{
       count++;
     }
   }
-  public static int[] merge(int[] data, int[] data1){
+  public static void merge(int[] data, int[] data1){
     merge = new int[data.length + data1.length];
     if (data.length == 1 && data1.length == 1){
       if (data[0] >= data1[0]){
@@ -37,8 +37,9 @@ public class Merge{
         merge[1] = data1[0];
       }
     }
+    return;
     if (data.length > 1 && data1.length > 1){
-      
+      return
     }
   }
 }
