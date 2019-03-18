@@ -33,8 +33,12 @@ public class Merge{
         merge[1] = data[0];
       }
       else{
-        
+        merge[0] = data[0];
+        merge[1] = data1[0];
       }
+    }
+    if (data.length > 1 && data1.length > 1){
+      
     }
   }
 }
