@@ -8,14 +8,16 @@ public class Merge{
   }
   public static void mergeSort(int[] data, int lo, int hi){
     if (lo >= hi){
-      merge(temp1, temp2);
+      return;
     }
     if (data.length == 1){
       return;
     }
     if (data.length > 1){
       split(data);
-      mergeSort(data, lo + 1, data.length);
+      merge(temp1, temp2);
+      mergeSort(temp1, lo + 1, temp1.length);
+      mergeSort(temp2, lo + 1, temp2.length);
     }
   }
   public static void split(int[] data){
@@ -43,7 +45,6 @@ public class Merge{
         merge[1] = data1[0];
       }
     }
-    return;
     if (data.length > 1 && data1.length > 1){
       return;
     }
