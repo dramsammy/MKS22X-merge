@@ -3,14 +3,26 @@ public class Merge{
   public static int[] temp1;
   public static int[] temp2;
   public static int[] merge;
-  public static void mergeSort(int[] data){
-    mergeSort(data, 1, data.length);
-    return;
+  public static void mergesort(int[] data){
+    mergesort(data, 0, data.length - 1);
+
   }
-  public static void mergeSort(int[] data, int lo, int hi){
+  public static void mergesort(int[] data, int lo, int hi){
     if (lo >= hi){
       return;
     }
+    else{
+      temp1 = new int[data.length / 2];
+      temp2 = new int[data.length - data.length / 2];
+      for (int i = 0; i < temp1.length; i++){
+        temp1[i] = data[i];
+      }
+      for (int a = 0; a < temp2.length; a++){
+        temp2[a] = data[a + data.length/2];
+      }
+      mergesort(temp1, 0, temp1.length - 1);
+      mergesort(temp2, 0, temp2.length - 1);
+      merge(data, temp1, temp2);
   //   if (data.length == 1){
   //     merge(temp1, temp2);
   //   }
@@ -20,14 +32,16 @@ public class Merge{
   //     mergeSort(temp2, lo + 1, temp2.length);
   //   }
   // }
+}
+}
   public static void merge(int[] data, int[] a, int[] b){
-    int x, y = 0;
+    int x, y;
+    x = 0; y = 0;
     for (int i = 0; i < data.length; i++){
-      if (x >= data.length){
+      if (x >= a.length){
         data[i] = b[y];
         y++;
       }
-    }
     else if (y >= b.length){
       data[i] = a[x];
       x++;
@@ -41,6 +55,7 @@ public class Merge{
       y++;
     }
   }
+}
   // public static void split(int[] data){
   //   int length = 0;
   //   int count = 0;
@@ -107,7 +122,7 @@ public class Merge{
 //   System.out.println();
 // }
 int[] test = {12, 2, 5, 7, 4, 5, 8, 9, 1, 11};
-mergeSort(test);
+mergesort(test);
 System.out.println(Arrays.toString(test));
   }
 }
