@@ -56,6 +56,10 @@ public class Merge{
     }
   }
 }
+public static void insertionsort(int[] ary, int start. int end){
+  int length = end - start + 1;
+  for (int i = 1; i < length; i++)
+}
   // public static void split(int[] data){
   //   int length = 0;
   //   int count = 0;
