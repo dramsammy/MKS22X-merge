@@ -11,15 +11,15 @@ public class Merge{
     if (lo >= hi){
       return;
     }
-    if (data.length == 1){
-      merge(temp1, temp2);
-    }
-    if (data.length > 1){
-      split(data);
-      mergeSort(temp1, lo + 1, temp1.length);
-      mergeSort(temp2, lo + 1, temp2.length);
-    }
-  }
+  //   if (data.length == 1){
+  //     merge(temp1, temp2);
+  //   }
+  //   if (data.length > 1){
+  //     split(data);
+  //     mergeSort(temp1, lo + 1, temp1.length);
+  //     mergeSort(temp2, lo + 1, temp2.length);
+  //   }
+  // }
   public static void merge(int[] data, int[] a, int[] b){
     int x, y = 0;
     for (int i = 0; i < data.length; i++){
@@ -27,6 +27,18 @@ public class Merge{
         data[i] = b[y];
         y++;
       }
+    }
+    else if (y >= b.length){
+      data[i] = a[x];
+      x++;
+    }
+    else if (a[x] <= b[y]){
+      data[i] = a[x];
+      x++;
+    }
+    else if (b[y] < a[x]){
+      data[i] = b[y];
+      y++;
     }
   }
   // public static void split(int[] data){
