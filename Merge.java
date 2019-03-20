@@ -11,6 +11,9 @@ public class Merge{
     if (lo >= hi){
       return;
     }
+    if (hi - lo < 50){
+      insertionsort(data, lo, hi);
+    }
     else{
       temp1 = new int[data.length / 2];
       temp2 = new int[data.length - data.length / 2];
@@ -56,9 +59,16 @@ public class Merge{
     }
   }
 }
-public static void insertionsort(int[] ary, int start. int end){
+public static void insertionsort(int[] ary, int start, int end){
   int length = end - start + 1;
-  for (int i = 1; i < length; i++)
+  for (int i = 1; i < length; i++){
+    int save = ary[start + i];
+    int a;
+    for(a = i; a > 0 && save < ary[start + a - 1]; a--){
+      ary[start + a] = ary[start + a - 1];
+    }
+  ary[start + a] = save;
+  }
 }
   // public static void split(int[] data){
   //   int length = 0;
